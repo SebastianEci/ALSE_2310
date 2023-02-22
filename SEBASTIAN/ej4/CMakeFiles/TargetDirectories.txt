@@ -1,0 +1,3 @@
+/home/alse/ALSE_2310/SEBASTIAN/ej4/CMakeFiles/ej4.dir
+/home/alse/ALSE_2310/SEBASTIAN/ej4/CMakeFiles/edit_cache.dir
+/home/alse/ALSE_2310/SEBASTIAN/ej4/CMakeFiles/rebuild_cache.dir
