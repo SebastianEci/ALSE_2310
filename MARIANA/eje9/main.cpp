@@ -24,30 +24,29 @@ int main(int argc, char** argv){
   b.setRe ( atof(argv[4]) );
   b.setIm ( atof(argv[5]) );
   
-  ang1 = a.angulo();
-  mag1 = a.magnitud();
-
   for(int i=0; i<5; i++){
       vec[i].setRe(atof (argv[2*i+1]));
       vec[i].setIm(atof (argv[2*i+2]));
   }
 
   cout <<"Los numeros son:" << vec[0] << " , " << vec[1] << " , " << vec[2] << " , " << vec[3] << " , " << vec[4] <<endl;
+  cout << "Los angulos respectivamente son:" <<vec[0].angulo()<< " , " << vec[1].angulo() << " , " << vec[2].angulo() << " , " << vec[3].angulo() << " , " << vec[4].angulo() <<endl;
+  cout << "Las magnitudes respectivamente son:" <<vec[0].magnitud()<< " , " << vec[1].magnitud() << " , " << vec[2].magnitud() << " , " << vec[3].magnitud() << " , " << vec[4].magnitud() <<endl;
 
   bool mayor;
   do {
       mayor = false;
-      for (int i=0; i<5; i++){
-          if(vec[i].magnitud() > vec[i+1].magnitud()){
+      for (int i = 0; i < 4; i++){
+          if(vec[i].angulo() > vec[i+1].angulo()){
               aux = vec[i];
               vec[i] = vec[i+1];
-              vec[i+1]=aux;
+              vec[i+1] = aux;
               mayor = true;
-          }if (vec[i].magnitud() == vec[i+1].magnitud()){
-              if(vec[i].angulo() > vec[i+1].angulo()){
+          }if (vec[i].angulo() == vec[i+1].angulo()){
+              if(vec[i].magnitud() > vec[i+1].magnitud()){
                   aux = vec[i];
                   vec[i] = vec[i+1];
-                  vec[i+1]=aux;
+                  vec[i+1] = aux;
                   mayor = true;
               }
           }
@@ -55,7 +54,6 @@ int main(int argc, char** argv){
   } while (mayor == true);
 
   cout <<"Los numeros en orden ascendente son:" << vec[0] << " , " << vec[1] << " , " << vec[2] << " , " << vec[3] << " , " << vec[4] <<endl;
-  cout <<"Angulo: "<< ang1 <<endl;
-  cout <<"Magnitud: "<< mag1 <<endl;
+
   return 0;
 }
