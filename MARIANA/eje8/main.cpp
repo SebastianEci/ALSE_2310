@@ -18,6 +18,7 @@ using namespace std;
 
 int main(int argc, char** argv){
   Complejo a, b, tercero, resta, conj1, conj2, inv1, inv2;
+  double ang1, mag1;
   char ind[2];
   strcpy (ind, argv[1]);
   int (op);
@@ -44,7 +45,7 @@ int main(int argc, char** argv){
   }
   else 
   {
-  cout <<"Caracter Incorrecto"<<endl;
+  cout <<"Caracter Incorrecto."<<endl;
   }
 
   tercero = a + b;
@@ -53,7 +54,8 @@ int main(int argc, char** argv){
   conj2 = b.conjugado();
   inv1 = a.inverso();
   inv2 = b.inverso();
-
+  ang1 = a.angulo();
+  mag1 = a.magnitud();
 
   switch(op)
   {
@@ -66,8 +68,11 @@ int main(int argc, char** argv){
   	case  4: cout << "El conjugado de (" << a << ") es " << conj1 << " y el de (" << b << ") es " << conj2 << endl;
   	break;
 
-  	default: cout <<"Resultado" <<endl;
+  	default: cout <<"Ingrese un caracter valido." <<endl;
   }
+
+  cout <<"Angulo"<< ang1 <<endl;
+  cout <<"Magnitud"<< mag1 <<endl;
 
   return 0;
 }

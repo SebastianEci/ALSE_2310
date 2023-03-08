@@ -20,14 +20,14 @@ double Complejo::distancia( const Complejo &b ){
     double y = b.im - im;
     return sqrt( x * x  + y * y );
   }
-
 double Complejo::angulo(){
-    return atan2(im, re);
+    return atan2(im ,re);
 }
 
-double Complejo::magnitud (){
+double Complejo::magnitud(){
     return sqrt(re*re + im*im);
 }
+
 
 Complejo Complejo::operator+(Complejo &a){
     Complejo c;
