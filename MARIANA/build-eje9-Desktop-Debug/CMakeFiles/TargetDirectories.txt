@@ -1,3 +1,0 @@
-/home/mariana/Documents/ALSE_2310/MARIANA/build-eje9-Desktop-Debug/CMakeFiles/ej9.dir
-/home/mariana/Documents/ALSE_2310/MARIANA/build-eje9-Desktop-Debug/CMakeFiles/edit_cache.dir
-/home/mariana/Documents/ALSE_2310/MARIANA/build-eje9-Desktop-Debug/CMakeFiles/rebuild_cache.dir
