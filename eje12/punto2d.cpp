@@ -54,12 +54,12 @@ Punto2D::Punto2D()
     x = y = 0.;
 }
 
-Punto2D::Punto2D(const Punto2D &a)
+/*Punto2D::Punto2D(const Punto2D &a)
 {
   x = a.x;
   y = a.y;
 }
-
+*/
 Punto2D::Punto2D(double r, double i)
 {
   x = r;

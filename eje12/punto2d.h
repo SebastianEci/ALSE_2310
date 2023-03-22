@@ -7,7 +7,7 @@ class Punto2D{
 
 public:
   Punto2D();
-  Punto2D( const Punto2D &a );
+//  Punto2D( const Punto2D &a );
   Punto2D(double r, double i );
   double   X();
   bool     X( double r );
