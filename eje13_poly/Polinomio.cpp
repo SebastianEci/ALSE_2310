@@ -224,3 +224,8 @@ std::string Polinomio::getString() {
     }
     return stream.str();
 }
+
+bool Polinomio::simplificar(){
+  
+  return true;
+}
