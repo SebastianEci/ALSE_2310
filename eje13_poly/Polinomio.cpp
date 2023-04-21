@@ -201,6 +201,27 @@ void Polinomio::nuevoTermino(float c, int p){
 }
 
 void Polinomio::simplificar(){
+  Termino *t1, *t2, *t3;
+  t1 = _polCabeza;
+
+  while(t1 != NULL){
+    t2 = t1->getSiguiente();
+    while(t2 != NULL){
+      if(t1->getP() == t2->getP() ){
+        t1->setC( t1->getC() + t2->getC() );  // Actualizo el valor de C del primer término
+        // Ahora debo borrar el segundo término sin perder la conexión de la lista
+        t3 = t1->getSiguiente();
+        while(t3->getSiguiente() != t2 ){
+          t3 = t3->getSiguiente();
+        }
+        t3->setSiguiente( t2->getSiguiente() );
+        delete t2;
+        t2 = t3;
+      }
+      t2 = t2->getSiguiente();
+    }
+    t1 = t1->getSiguiente();
+  }
 
 }
 
@@ -223,9 +244,4 @@ std::string Polinomio::getString() {
         temp = temp->getSiguiente();
     }
     return stream.str();
-}
-
-bool Polinomio::simplificar(){
-  
-  return true;
 }
