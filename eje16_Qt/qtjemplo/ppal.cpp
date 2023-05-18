@@ -2,6 +2,7 @@
 #include "./ui_ppal.h"
 #include "dividiag.h"
 #include <Eigen/Dense>
+#include <iostream>
 
 
 using namespace Eigen;
@@ -11,7 +12,17 @@ PPal::PPal(QWidget *parent)
     , ui(new Ui::PPal)
 {
     ui->setupUi(this);
+    _tipo = 0;
+    _escalar = 0.0 ;
+    std::cout << _tipo << ":  " << _escalar  << std::endl;
 }
+
+void PPal::tipoDivi(int tipo, double esc){
+    _tipo = tipo;
+    _escalar = esc;
+
+}
+
 
 PPal::~PPal()
 {
@@ -44,10 +55,23 @@ void PPal::on_btn_Operar_clicked()
     case 3:
         Dividiag  ventana;
         ventana.setModal( true );
-        connect( &ventana, &Divi_diag::senalDivi, this, &Ppal::tipoDivi );
+        connect( &ventana, &Dividiag::senalDivi, this, &PPal::tipoDivi );
         ventana.show();
         ventana.exec();
-        mC = mA * mB.inverse();
+
+        switch( _tipo ){
+        case 0: // A/B
+            mC = mA * mB.inverse();
+	    break;
+	case 1: // B/A
+	    mC = mA.inverse() * mB;
+	    break;
+	case 2: // A/Esc
+	    mC = mA / _escalar;
+	    break;
+	case 3:
+	    mC = mB / _escalar;
+	}
     }
 
 

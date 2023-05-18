@@ -10,7 +10,7 @@ Dividiag::Dividiag(QWidget *parent) :
 
 Dividiag::~Dividiag()
 {
-    delete ui;
+    delete ui; 
 }
 
 void Dividiag::on_rdb_AE_clicked(bool checked)
@@ -34,5 +34,19 @@ void Dividiag::on_rdb_AB_clicked(bool checked)
 void Dividiag::on_rdb_BA_clicked(bool checked)
 {
     ui->txt_Escalar->setEnabled( false );
+}
+
+
+void Dividiag::on_buttonBox_accepted()
+{
+    int t;
+    double e;
+    if( ui->rdb_AB->isChecked()) t = 0;
+    if( ui->rdb_BA->isChecked()) t = 1;
+    if( ui->rdb_AE->isChecked()) t = 2;
+    if( ui->rdb_BE->isChecked() ) t = 3 ;
+
+    e = ui->txt_Escalar->text().toDouble();
+    emit senalDivi( t, e );
 }
 

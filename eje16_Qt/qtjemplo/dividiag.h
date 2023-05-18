@@ -24,6 +24,8 @@ private slots:
 
     void on_rdb_BA_clicked(bool checked);
 
+    void on_buttonBox_accepted();
+
 signals:
     void senalDivi(int tipo, double escalar);
 

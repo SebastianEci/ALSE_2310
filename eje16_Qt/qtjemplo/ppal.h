@@ -23,5 +23,7 @@ private slots:
 
 private:
     Ui::PPal *ui;
+    int _tipo;
+    double _escalar;
 };
 #endif // PPAL_H
